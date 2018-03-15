@@ -31,8 +31,8 @@ function AboutFilm({ serverAnswer, posterPath, bgrndURL, youtubego, showInfo, to
                     <span><h2 className="main-title">{serverAnswer.original_title}</h2>
                         <span className="release_date">{serverAnswer.release_date}</span>
                     </span>
-                    <div>
-                        <a target="_blank" className="youtube-btn" href={youtubego}><img width="5%" src="http://mforum.ist/data/avatars/o/59/59749.jpg?1520514043" /></a>
+                    <div className="youtube-area" >
+                        <a target="_blank" className="youtube-btn" href={youtubego}><img className="logo4youtubebtn" src="http://mforum.ist/data/avatars/o/59/59749.jpg?1520514043" /></a>
                     </div>
                     <h3 dir="auto">Overview</h3>
                     <p>{serverAnswer.overview}</p>
@@ -51,7 +51,9 @@ function AboutFilm({ serverAnswer, posterPath, bgrndURL, youtubego, showInfo, to
                             <p className="character">Director</p>
                         </li>
                     </ul>
-                    <button onClick={showInfo} >nazad</button>
+                    <div className="returnbtn" >
+                        <button onClick={showInfo} >nazad</button>
+                    </div>
                 </div>
             </div>
         </div>

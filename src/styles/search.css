@@ -1,0 +1,50 @@
+.jumbotron {
+    color: #888;
+    display: block;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #282828;
+    border-radius: 20px;
+    padding: 5%;
+    padding-top: 3%;
+    max-width: 50%;
+}
+
+.text-center {
+    margin-top: 0;
+    margin-bottom: 2%;
+    /* font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2; */
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.searchForm{
+    max-width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    font: 400 100% Arial;
+    /* font: 400 13.3333px Arial; */
+    /* text-align: start; */
+    /* letter-spacing: normal; */
+    /* word-spacing: normal; */
+    /* text-transform: none; */
+    /* text-indent: 0px; */
+    /* text-shadow: none; */
+    /* text-rendering: auto; */
+    /* display: block; */
+    /* width: 100%; */
+    /* padding: 0.375rem 1rem; */
+    /* font-size: 0.875rem; */
+    /* line-height: 1.5; */
+    color: #282828;
+    background-color: #fff;
+    /* background-clip: padding-box; */
+    /* border: 1px solid transparent; */
+    border-radius: 20px;
+}

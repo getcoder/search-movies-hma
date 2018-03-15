@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import '../styles/filminfo.css';
 
+import { BrowserRouter as Router, HashRouter, Route, Link } from "react-router-dom";
 
-class AboutFilm extends Component {
+class AboutFilm2 extends Component {
     state = {
         trailer: '',
         serverAnswer: []
     }
 
-    getId() {
-        var str = window.location.href;
-        var id = str.slice((str.lastIndexOf("#")) + 1);
-        return id;
-    }
-
     componentDidMount() {
-        this.fetchData();
+        this.fetchData(this.props.match.params.id);
     }
 
-    fetchData() {
+    fetchData(parametr) {
         let mainURL = 'https://api.themoviedb.org/3/movie/',
-            // id = this.getId(),
-            id = 269149,
+            id = parametr,
             mode = '?language=en-US',
             videos4film = '/videos',
             key = '&api_key=5635d724d799fa6033209f3cf8705ee0';
@@ -46,7 +40,7 @@ class AboutFilm extends Component {
             .catch(error => console.error('parsing failed', error))
 
         url = mainURL + id + videos4film + mode + key;
-        
+
         fetch(`${url}`)
             .then(response => response.json())
             .then(parsedJSON => (
@@ -62,9 +56,8 @@ class AboutFilm extends Component {
 
     render() {
         const { serverAnswer, trailer } = this.state;
-        // console.log("rend=", serverAnswer);
-        // console.log("trailer=", trailer);
         var posterPath;
+
         if (serverAnswer.poster_path === 'null') {
             posterPath = "http://www.clker.com/cliparts/q/L/P/Y/t/6/no-image-available-md.png";
         } else {
@@ -72,6 +65,7 @@ class AboutFilm extends Component {
         }
         var prePoster = "https://cdn.glitch.com/620c4a0a-2074-43a8-be95-6f8ab3bee884%2F1.gif?1518536619720";
 
+        // пример определения стиля
         const divStyle = {
             color: 'blue',
             backgroundColor: 'red',
@@ -81,39 +75,23 @@ class AboutFilm extends Component {
         var ytbURL = "https://www.youtube.com/watch?v=";
         var youtubego = ytbURL + this.state.trailer.trailer; // нужна доработка для ситуаций отсутствия трейлеров
         return (
-
             // <div style={divStyle} id="custom_bg" className='sfsff'> //пример использования стилей
             <div id="custom_bg" className='sfsff'>
-                {/* <div class="single_column"> */}
+
+                <Link to='/about'>Back</Link>
+
                 <div className="image_content">
-                    {/* <img className="poster" src={posterPath} alt="" /> */}
-                    <img className="poster" src="F:/MyScripts/cinema-react-ssilki/src/assets/poster.jpg" alt="" />
+                    <img className="poster" src={posterPath} alt="" />
                 </div>
 
                 <div className="header_poster_wrapper">
-                    {/* <div class="title" dir="auto"> */}
                     <span><h2 className="main-title">{serverAnswer.original_title}</h2>
                         <span className="release_date">{serverAnswer.release_date}</span>
                     </span>
-                    {/* </div> */}
 
-                    <a target="_blank" href={youtubego}><img width="5%" src="http://mforum.ist/data/avatars/o/59/59749.jpg?1520514043"/></a>
-{/* 
-                    <form action={youtubego} target="_blank">
-                        <button type="submit">Кнопка-ссылка</button>
-                    </form>
-
-                    <button id="trailerBtn">Play Trailer</button>
-                    <li className="video none">
-                                 <a className="play_trailer" target="_blank" href={youtubego} data-id="PFWAOnvMd1Q">
-                                     <span className="glyphicons-play"></span> Play Trailer
-                     </a>
-                             </li> */}
-                    {/* <div class="header_info"> */}
+                    <a target="_blank" href={youtubego}><img width="5%" src="http://mforum.ist/data/avatars/o/59/59749.jpg?1520514043" /></a>
                     <h3 dir="auto">Overview</h3>
-                    {/* <div class="overview" dir="auto"> */}
                     <p>{serverAnswer.overview}</p>
-                    {/* </div> */}
                     <h3 className="featured" dir="auto">Создатели</h3>
                     <ol className="people_no_image">
                         <li className="profile">
@@ -131,12 +109,8 @@ class AboutFilm extends Component {
                     </ol>
                 </div>
             </div>
-            // </div>
-            // </div>
-
-            // </div>
         );
     }
 }
 
-export default AboutFilm;
+export default AboutFilm2;

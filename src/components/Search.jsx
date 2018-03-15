@@ -4,13 +4,13 @@ function Search({ updateData }) {
     return (
         <div className="jumbotron">
             <h3 className="text-center">Search For Any Movie</h3>
-            <form id="searchForm"
+            <form id="searchForm" method="get" action="/search/"
                 onSubmit={
                     (e) => {
-                        e.preventDefault();
+                        // e.preventDefault();
+                        var fa = document.getElementById('searchForm');
                         var input = document.getElementById('searchText').value;
-                        console.log('znachen = ', input);
-                        updateData(input)
+                        fa.action="/search/"+input;
                     }
                 }>
                 <input type="text" className="form-control" id="searchText" placeholder="Search Movies..." />

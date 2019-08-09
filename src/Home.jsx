@@ -4,7 +4,8 @@ import Search from './components/Search';
 import SearchClass from './components/SearchClass';
 import ResultsList from './components/ResultsList';
 import ResultsListclass from './components/ResultsListClass';
-import AboutFilm2 from './info_page/AboutFilm2';
+// import AboutFilm2 from './info_page/AboutFilm2';
+import AboutFilm from './components/AboutFilm';
 import Popup from './components/Popup';
 
 import './styles/popup.css';
@@ -19,6 +20,14 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    this.fetchData(this.state.search);
+  }
+
+  goHome = () => {
+    this.setState({
+      search: 's',
+      info: false
+    })
     this.fetchData(this.state.search);
   }
 
@@ -84,15 +93,18 @@ class Home extends Component {
       <div className="Home">
         {this.state.info ? (
           <div>
-            <button onClick={this.showInfo} >nazad</button>
+            {/* <button onClick={this.showInfo} >nazad</button> */}
+            <button onClick={this.goHome} >domoyy</button>
+            {console.log("wuriwg = ", this.state.search)}
             <button onClick={this.togglePopup} >show popup on about page</button>
 
             <Search updateData={this.updateData} />
-            <AboutFilm2 id={id} showInfo={this.showInfo} togglePopup={this.togglePopup} />
+            {/* <AboutFilm2 id={id} showInfo={this.showInfo} togglePopup={this.togglePopup} /> */}
+            <AboutFilm id={id} showInfo={this.showInfo} togglePopup={this.togglePopup} />
           </div>
         ) : (
             <div>
-              {/* <button onClick={this.showInfo} >nazad</button> */}
+              <button onClick={this.goHome} >domoy</button>
               <button onClick={this.togglePopup} >show popup on main page</button>
 
               {/* <Search updateData={this.updateData} /> */}

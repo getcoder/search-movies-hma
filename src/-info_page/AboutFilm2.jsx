@@ -84,7 +84,7 @@ class AboutFilm2 extends Component {
         var ytbURL = "https://www.youtube.com/watch?v=";
         var youtubego = ytbURL + this.state.trailer.trailer; // нужна доработка для ситуаций отсутствия трейлеров
         return (
-            <AboutFilm togglePopup={this.props.togglePopup} showInfo={this.props.showInfo} serverAnswer={serverAnswer} posterPath={posterPath} bgrndURL={bgrndURL} youtubego={youtubego} />
+            <AboutFilm getChild={this.props.getChild} togglePopup={this.props.togglePopup} showInfo={this.props.showInfo} serverAnswer={serverAnswer} posterPath={posterPath} bgrndURL={bgrndURL} youtubego={youtubego} />
         );
     }
 }

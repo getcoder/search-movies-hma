@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/filminfo1.css';
+import '../styles/filminfo.css';
 // import '../styles/aboutfilm.css';
 
 

@@ -32,7 +32,7 @@ function AboutFilm({ serverAnswer, posterPath, bgrndURL, youtubego, showInfo, to
                         <span className="release_date">{serverAnswer.release_date}</span>
                     </span>
                     <div className="youtube-area" >
-                        <a target="_blank" className="youtube-btn" href={youtubego}><img className="logo4youtubebtn" src="http://mforum.ist/data/avatars/o/59/59749.jpg?1520514043" /></a>
+                        <a target="_blank" className="youtube-btn" href={youtubego}><img className="logo4youtubebtn" src="https://pngicon.ru/file/uploads/youtube-1.png" /></a>
                     </div>
                     <h3 dir="auto">Overview</h3>
                     <p>{serverAnswer.overview}</p>

@@ -22,15 +22,17 @@ function FilmInfo({ id, title, poster, overview, releaseDate, getChild }) {
 
         <div className='item_poster_card effect7'>
             <div className='image_content_filminfo'>
-                <img className="poster_filminfo" presrc={prePoster} src={posterPath} />
+                <img className="poster_filminfo" presrc={prePoster} src={posterPath} onClick={() => { getChild(id) }} />
             </div>
             <div className='info'>
                 <div className='wrapper'>
                     {/* <div className='flex'> */}
                     {/* <a id='movie_672_go' className='title_result' target="_blank" href={docHref} title={title}>{title}</a> */}
                     {/* <Link to="/about" target="_blank">AboutFilm</Link> */}
-                    <p className="titleinp" >{title}</p>
+                    <span className="titleinp" onClick={() => { getChild(id) }} > {title}</span>
+                    {/* <p className="titleinp" >{title}</p> */}
                     <p>{releaseDate}</p>
+                    {/* <p><span className="spanLink" onClick={() => { getChild(id) }} > nuuuu</span></p> */}
                     {/* </div> */}
                 </div>
 

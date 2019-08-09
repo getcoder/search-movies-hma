@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FilmInfo from './FilmInfo';
 
-class ResultsListClass extends React.Component {
+class ResultsListClass extends Component {
 
     render() {
-        {console.log('props--', this.props)}
-        
-        let propopo = this.props.eben;
-        {console.log('propopo--', propopo)}
+
+        const filmResult = this.props.searchResults.map(                    // перебираем массив результата поиска и превращаем 
+            //    searchResult => <FilmInfo searhResult = {searchResult}/> //каждый элемент массива в реакт элемент                                                                
+               searchResult => <FilmInfo key={searchResult.id}
+                                         id={searchResult.id}
+                                         title={searchResult.original_title}
+                                         poster={searchResult.poster_path}
+                                         overview={searchResult.overview}
+                                         getChild={this.props.getChild}
+                                         releaseDate = {searchResult.release_date}/>                                                           
+           )
+
         return (
-            <div>daskjfh---
-                {propopo}
-                {/* <FilmInfo />
-           <FilmInfo />
-           <FilmInfo /> */}
-                {/* {filmResult} */}
+            <div>
+                {filmResult}               
             </div>
         );
     }

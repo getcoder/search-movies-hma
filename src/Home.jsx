@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-// import './Home.css';
-import './styles/cinema.css';
 
 import Search from './components/Search';
 import SearchClass from './components/SearchClass';
-import FilmInfo from './components/FilmInfo';
 import ResultsList from './components/ResultsList';
+import ResultsListclass from './components/ResultsListClass';
 import AboutFilm2 from './info_page/AboutFilm2';
+import Popup from './components/Popup';
+
+import './styles/popup.css';
 
 class Home extends Component {
   state = {
-    name: 'Бумеранг не запущен',
+    showPopup: false,
     id: '',
     info: false,
     search: 's',
-    isLoading: true,
     serverAnswer: []
   }
 
@@ -23,15 +23,15 @@ class Home extends Component {
   }
 
   fetchData(parametr) {
-    let url = 'https://api.themoviedb.org/3/',
+    let mainURL = 'https://api.themoviedb.org/3/',
       mode = 'search/movie?query=',
-      movieName,
       key = '&api_key=5635d724d799fa6033209f3cf8705ee0';
+    let url;
 
     if (parametr == 's') {
       url = "https://api.themoviedb.org/3/movie/popular?region=Russia&page=1&language=en-US&api_key=5635d724d799fa6033209f3cf8705ee0"
     } else {
-      url = url + mode + parametr + key
+      url = mainURL + mode + parametr + key
     };
 
     fetch(`${url}`)
@@ -54,6 +54,9 @@ class Home extends Component {
   }
 
   updateData = (value1) => {
+    this.setState({
+      info: false
+    })
     this.fetchData(value1);
   }
 
@@ -68,23 +71,37 @@ class Home extends Component {
     this.setState({ info: true }, () => console.log(this.state))
   }
 
+  togglePopup =() => {
+    this.setState({
+      showPopup: !this.state.showPopup
+    })
+  }
+
+
   render() {
-    const { isLoading, serverAnswer, id } = this.state;
+    const { serverAnswer, id } = this.state;
     return (
       <div className="Home">
-
-        {/* <SearchClass updateData={this.updateData} /> */}
-        {/* <Search updateData={this.updateData} /> */}
-
-        {/* {this.state.info ? <AboutFilm/> : <ResultsList searchResults={serverAnswer} />} */}
         {this.state.info ? (
           <div>
             <button onClick={this.showInfo} >nazad</button>
-            <AboutFilm2 id={id} />
+            <button onClick={this.togglePopup} >show popup on about page</button>
+
+            <Search updateData={this.updateData} />
+            <AboutFilm2 id={id} showInfo={this.showInfo} togglePopup={this.togglePopup} />
           </div>
-        ) : <ResultsList getChild={this.getChild} searchResults={serverAnswer} />}
-        {/* <AboutFilm /> */}
-        {/* <ResultsList searchResults={serverAnswer} /> */}
+        ) : (
+            <div>
+              {/* <button onClick={this.showInfo} >nazad</button> */}
+              <button onClick={this.togglePopup} >show popup on main page</button>
+
+              {/* <Search updateData={this.updateData} /> */}
+              <SearchClass updateData={this.updateData} />
+              {/* <ResultsList getChild={this.getChild} searchResults={serverAnswer} /> */}
+              <ResultsListclass getChild={this.getChild} searchResults={serverAnswer} />
+            </div>
+          )}
+        {this.state.showPopup ? <Popup text='This is Popup!!!' closePopup={this.togglePopup} /> : null}
       </div>
     );
   }

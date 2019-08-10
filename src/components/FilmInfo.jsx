@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AboutFilm from '../info_page/AboutFilm';
-
+import '../styles/filminfo.css';
 function FilmInfo({ id, title, poster, overview, releaseDate }) {
 
     // const docHref = `../info_page/filminfo.html?id=${id}`;
-    const docHref = `../info_page/filminfo.html`;
+    const docHref = `../info_page/filminfo1.html`;
 
     var posterPath;
 
@@ -18,24 +18,28 @@ function FilmInfo({ id, title, poster, overview, releaseDate }) {
 
     return (
         <Router>
-            <div>
+            {/* <div> */}
 
                 <div className='item_poster_card effect7'>
-                    <div className='image_content'>
-                        <img className="poster" width='185px' presrc={prePoster} src={posterPath} />
+                    <div className='image_content_filminfo'>
+                        {/* <img className="poster_filminfo" width='185px' presrc={prePoster} src={posterPath} /> */}
+                        <Link to={`/about#${id}`} target="_blank">
+                            <img className="poster_filminfo" width='185px' presrc={prePoster} src={posterPath} />
+                        </Link>
                     </div>
                     <div className='info'>
                         <div className='wrapper'>
-                            <div className='flex'>
+                            {/* <div className='flex'> */}
                                 {/* <a id='movie_672_go' className='title_result' target="_blank" href={docHref} title={title}>{title}</a> */}
                                 {/* <Link to="/about" target="_blank">AboutFilm</Link> */}
-                                <Link to={`/about#${id}`} target="_blank">{title}</Link>
-                                <span>{releaseDate}</span>
-                            </div>
+                                <Link to={`/about#${id}`} className="film_link" target="_blank">{title}</Link>
+                                <p className="release_date">{releaseDate}</p>
+                            {/* </div> */}
                         </div>
                         <p className='overview'>{overview}</p>
                         <p className='view_more'>
-                            <a id='movie_672' data-id='4bc89159017a3c122d00c288' target="_blank" data-media-type='movie' className='result' href='/filminfo.html?id=${id}' title={title}>Подробнее</a>
+                            {/* <a id='movie_672' data-id='4bc89159017a3c122d00c288' target="_blank" data-media-type='movie' className='result' href={`/filminfo.html?id=${id}`} title={title}>Подробнее</a> */}
+                            <Link to={`/about#${id}`} target="_blank">About</Link>
                         </p>
                     </div>
                 </div>
@@ -43,7 +47,7 @@ function FilmInfo({ id, title, poster, overview, releaseDate }) {
                 {/* <Route exact path="/" component={App} /> */}
                 {/* <Route path="/aboutfilm" component={AboutFilm} /> */}
 
-            </div>
+            {/* </div> */}
         </Router>
     );
 }

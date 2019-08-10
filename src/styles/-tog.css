@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.single_column {
+    padding: 3%;
+	margin: 3%;
+    /* padding-right: 3%;
+    padding-bottom: 40px;
+    padding-top: 40px; */
+    max-width: 100%;
+    display: flex;
+    opacity: 1;
+    background: rgba(121, 121, 121, 0.7);
+}
+
+.custom_bg {
+    /* background-size: auto 100% ; */
+    margin-top: 7%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    max-width: 100%;
+}
+.image_content {
+	
+    margin-right: 3%;
+}
+
+
+.poster2 {
+    /*width: 100%;*/
+    max-width: 100%;
+}
+
+.header_poster_wrapper {
+    max-width: 100%;
+//    border: 1px solid red;
+    color: aliceblue;
+    padding-left: 3%;
+    width: 85%;
+    max-height: 100%;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.main-title {
+    color: azure;
+    font-size: 35px;
+    /*font-weight: 700px;*/
+    display: inline;
+}
+
+.release_date {
+    color: aliceblue;
+	margin-left: 2%;
+    font-size: 25px;
+    /*font-weight: 400px;*/
+}
+
+.header_info {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.featured {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.people_no_image {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile {
+    height: 45px;
+    padding-right: 30px;
+    text-align: left;
+    /*width: 100%;*/
+    list-style: none;
+}
+
+.person-name {
+    margin: 0;
+}
+
+.person-name a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+span a {
+    text-decoration: none;
+}
+
+.character {
+    margin: 0;
+}
+

@@ -23,7 +23,7 @@ class App extends Component {
 
           <hr />
 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home2} />
           <Route path="/about" component={AboutFilm} />
           <Route path="/topics" component={Topics} />
         </div>
@@ -32,11 +32,13 @@ class App extends Component {
   }
 }
 
-// const Home = () => (
-//   <div>
-//     <h2>Home</h2>
-//   </div>
-// );
+const Home2 = () => (
+  <div>
+    {/* <h2>Home2</h2> */}
+    {console.log("6628384")}
+    <Home statte={"s"}></Home>
+  </div>
+);
 
 const About = () => (
   <div>

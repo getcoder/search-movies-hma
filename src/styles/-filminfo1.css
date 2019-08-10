@@ -36,9 +36,6 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.film_link{
-    font-size: 18px;
-}
 
 .info{
     margin-left: 2%;
@@ -71,7 +68,6 @@
     /* margin-left: 3%;
     margin-right: 3%; */
     /* font-size: 12pt; */
-    color: aliceblue;
     max-width: 100%;
 }
 
@@ -130,11 +126,4 @@ button{
 .titleinp{
     cursor: pointer;
     text-decoration:underline;
-}
-
-.release_date {
-    margin-left: 2%;
-    color: aliceblue;
-    font-size: 12pt;
-    /*font-weight: 400px;*/
 }

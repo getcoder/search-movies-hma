@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './Home.css';
-import './styles/cinema.css';
+// import './styles/cinema.css';
 
 import Search from './components/Search';
 import SearchClass from './components/SearchClass';
@@ -9,14 +9,16 @@ import ResultsList from './components/ResultsList';
 
 class Home extends Component {
   state = {
-    name: 'Бумеранг не запущен',
-    search: 's',
+    search: this.props.statte,
     isLoading: true,
     serverAnswer: []
   }
 
-  componentDidMount() {
+  componentDidMount() {    
     this.fetchData(this.state.search);
+  }
+  componentWillReceiveProps(){
+    this.fetchData(this.state.search); 
   }
 
   fetchData(parametr) {

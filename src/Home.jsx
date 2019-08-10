@@ -94,7 +94,7 @@ class Home extends Component {
         {this.state.info ? (
           <div>
             {/* <button onClick={this.showInfo} >nazad</button> */}
-            <button onClick={this.goHome} >domoyy</button>
+            <button onClick={this.goHome} >Main Page</button>
             {console.log("wuriwg = ", this.state.search)}
             <button onClick={this.togglePopup} >show popup on about page</button>
 
@@ -104,7 +104,7 @@ class Home extends Component {
           </div>
         ) : (
             <div>
-              <button onClick={this.goHome} >domoy</button>
+              <button onClick={this.goHome} >HomePage</button>
               <button onClick={this.togglePopup} >show popup on main page</button>
 
               {/* <Search updateData={this.updateData} /> */}

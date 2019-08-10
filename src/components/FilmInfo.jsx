@@ -46,7 +46,7 @@ function FilmInfo({ id, title, poster, overview, releaseDate, getChild }) {
                 {/* <span onClick={getChild(id)} >эта спан</span> */}
                 {/* <span onClick={() => { getChild(id)}} >эта спан</span> */}
                 <div className="moreinfobtn" >
-                    <button onClick={() => { getChild(id) }} >Подробнее</button>
+                    <button onClick={() => { getChild(id) }} >About</button>
                 </div>
             </div>
         </div>

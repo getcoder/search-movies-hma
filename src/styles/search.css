@@ -8,6 +8,7 @@
     border-radius: 20px;
     padding: 5%;
     padding-top: 3%;
+    padding-bottom: 2%;
     max-width: 50%;
 }
 
@@ -39,6 +40,8 @@
     /* text-rendering: auto; */
     /* display: block; */
     /* width: 100%; */
+    padding-left: 1%;
+    padding-right: 1%;
     /* padding: 0.375rem 1rem; */
     /* font-size: 0.875rem; */
     /* line-height: 1.5; */
@@ -47,4 +50,26 @@
     /* background-clip: padding-box; */
     /* border: 1px solid transparent; */
     border-radius: 20px;
+    outline: none;
+
 }
+
+.button7 {
+    padding: 1% 5%;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    font: 16px sans-serif;
+    font-weight: 700;
+    color: white;
+    outline: none;
+  }
+
+  .button7:hover { background: rgba(255,255,255,.2); }
+  .button7:active { background: white; }
+
+  .centerButton{
+      margin-top: 20pt;
+      text-align: center;
+  }

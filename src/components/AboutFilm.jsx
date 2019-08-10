@@ -102,12 +102,12 @@ class AboutFilm extends Component {
                         <span className="release_date">{serverAnswer.release_date}</span>
                     </span>
                     {/* <div className="youtube-area" > */}
-                        <a target="_blank" className="youtube-btn" href={youtubego}><img className="logo4youtubebtn" img width="7%" src="https://pngicon.ru/file/uploads/youtube-1.png" /></a>
+                        <a target="_blank" className="youTube-logo" href={youtubego}><img className="logo4youtubebtn" img width="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1280px-YouTube_full-color_icon_%282017%29.svg.png"/></a>
                     {/* </div> */}
                     
                     <h3 dir="auto">Overview</h3>
                     <p>{serverAnswer.overview}</p>
-                    <h3 className="featured" dir="auto">Создатели</h3>
+                    <h3 className="featured" dir="auto">Creators</h3>
                     <ul className="people_no_image">
                         <li className="profile">
                             <p className="person-name"><a href="/person/10967-steve-kloves">Steve Kloves</a></p>
@@ -123,7 +123,7 @@ class AboutFilm extends Component {
                         </li>
                     </ul>
                     <div className="returnbtn" >
-                        <button onClick={this.props.showInfo} >nazad</button>
+                        <button onClick={this.props.showInfo} >Go Home</button>
                     </div>
                 </div>
             </div>
